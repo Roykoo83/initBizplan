@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useGuestAuth } from '@/lib/auth';
@@ -10,7 +12,7 @@ import { DraftEditor } from '@/components/editor/draft-editor';
 import { cn } from '@/lib/utils';
 import { useProjectData } from '@/hooks/use-project-data';
 import { toast } from "sonner";
-import FileUploadModal from '@/components/FileUploadModal';
+import FileUploadModal from '@/components/file-upload-modal';
 import { UploadedFile } from '@/types';
 import { useChatPersistence } from '@/hooks/use-chat-persistence';
 import { API_BASE_URL } from '@/lib/config';

@@ -1,11 +1,11 @@
 "use client"
 
 import {
-  CircleCheck,
+  CheckCircle,
   Info,
-  LoaderCircle,
-  OctagonX,
-  TriangleAlert,
+  Loader2,
+  XOctagon,
+  AlertTriangle,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Toaster as Sonner } from "sonner"
@@ -19,13 +19,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme={theme as ToasterProps["theme"]}
       className="toaster group"
-      icons={{
-        success: <CircleCheck className="h-4 w-4" />,
-        info: <Info className="h-4 w-4" />,
-        warning: <TriangleAlert className="h-4 w-4" />,
-        error: <OctagonX className="h-4 w-4" />,
-        loading: <LoaderCircle className="h-4 w-4 animate-spin" />,
-      }}
       toastOptions={{
         classNames: {
           toast:
@@ -36,6 +29,13 @@ const Toaster = ({ ...props }: ToasterProps) => {
           cancelButton:
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
         },
+      }}
+      icons={{
+        success: <CheckCircle className="h-4 w-4 text-green-500" />,
+        info: <Info className="h-4 w-4 text-blue-500" />,
+        warning: <AlertTriangle className="h-4 w-4 text-amber-500" />,
+        error: <XOctagon className="h-4 w-4 text-red-500" />,
+        loading: <Loader2 className="h-4 w-4 animate-spin" />,
       }}
       {...props}
     />
